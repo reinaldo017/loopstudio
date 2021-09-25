@@ -1,0 +1,34 @@
+//Mixins
+@mixin horizontal-align($justify-content, $align-items) {
+    display: flex;
+    flex-direction: row;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin vertical-align($justify-content, $align-items) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+//Colors 
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+
+//Placeholders
+%card {
+    min-width: 21rem;
+    min-height: 8rem;
+    margin: 0.83rem 1.66rem;
+    position: relative;
+    background-repeat: no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: $white;
+    background-blend-mode: overlay;
+}

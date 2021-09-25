@@ -1,0 +1,79 @@
+.creations {
+    @include vertical-align(center, center);
+
+    &__title {
+        text-align: center;
+    }
+
+    &__container {
+        @include vertical-align(space-evenly, center);
+        margin: 1.66rem;
+    }
+
+    &__text {
+        position: absolute;
+        left: 1rem;
+        bottom: 1.6rem;
+        margin: 0;
+        width: 35%;
+    }
+
+    .button {
+        font-family: 'Alata', sans-serif;
+        padding: 1rem 2.53rem;
+        letter-spacing: 5px;
+        font-weight: 500;
+        border: 1px solid black;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+}
+
+//Cards
+#earth {
+    background: url('../images/mobile/image-deep-earth.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
+
+#arcade {
+    background: url('../images/mobile/image-night-arcade.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
+
+#soccer {
+    background: url('../images/mobile/image-soccer-team.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
+
+#grid {
+    background: url('../images/mobile/image-grid.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
+
+#up-above {
+    background: url('../images/mobile/image-from-above.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
+
+#borealis {
+    background: url('../images/mobile/image-pocket-borealis.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
+
+#curiosity {
+    background: url('../images/mobile/image-curiosity.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
+
+#fisheye {
+    background: url('../images/mobile/image-fisheye.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
+    background-size: cover;
+    @extend %card;
+}
