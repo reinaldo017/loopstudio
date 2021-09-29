@@ -6,6 +6,10 @@ html {
     font-size: 15px;
     font-family: 'Alata', sans-serif;
     height: 100%;
+
+    @media screen and (max-width: 370px) {
+        font-size: 14px;
+    }
 }
 
 body {
@@ -21,5 +25,10 @@ h2 {
 
 a {
     text-decoration: none;
-    color: $black;
+    color: $white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }

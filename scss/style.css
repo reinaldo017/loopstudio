@@ -1,7 +1,8 @@
 #earth, #arcade, #soccer, #grid, #up-above, #borealis, #curiosity, #fisheye {
-  min-width: 21rem;
+  width: 100%;
+  min-width: 18rem;
   min-height: 8rem;
-  margin: 0.83rem 1.66rem;
+  margin: 0.83rem 0;
   position: relative;
   background-repeat: no-repeat;
   font-family: 'Josefin Sans', sans-serif;
@@ -22,6 +23,12 @@ html {
   height: 100%;
 }
 
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -35,12 +42,18 @@ h2 {
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 .header {
   background-image: url("../images/mobile/image-hero.jpg");
   background-size: cover;
+  min-height: 43rem;
   display: flow-root;
 }
 
@@ -52,6 +65,7 @@ a {
   margin: 10.5rem 1.46rem;
   border: 1px solid white;
   padding: 1.8rem;
+  max-width: 28.53rem;
 }
 
 .nav {
@@ -77,6 +91,107 @@ a {
 
 .nav__hamburger {
   cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  -webkit-transition: width 300ms ease-out;
+  transition: width 300ms ease-out;
+  overflow: hidden;
+}
+
+.menu--show {
+  width: 100vw;
+}
+
+.menu__close-icon {
+  cursor: pointer;
+}
+
+.menu__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2.6rem 1.6rem;
+}
+
+.menu__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0 1.6rem;
+  opacity: 0;
+}
+
+.menu__ul--appear {
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menu__li {
+  margin: 1rem 0;
+}
+
+.menu__link {
+  font-size: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .about {
@@ -127,6 +242,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 6.5rem;
 }
 
 .creations__title {
@@ -147,6 +263,8 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 87%;
+  min-width: 18rem;
   margin: 1.66rem;
 }
 
@@ -214,5 +332,55 @@ a {
   background: url("../images/mobile/image-fisheye.jpg"), -webkit-gradient(linear, left top, right top, color-stop(40%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)));
   background: url("../images/mobile/image-fisheye.jpg"), linear-gradient(to right, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 100%);
   background-size: cover;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  color: white;
+  padding-bottom: 2rem;
+}
+
+.footer__logo {
+  margin-top: 3.73rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__ul {
+  margin-bottom: 1.8rem;
+}
+
+.footer__li {
+  margin: 1em auto;
+  text-align: center;
+}
+
+.footer__sm-container {
+  margin: 1.6rem auto;
+}
+
+.footer__sm {
+  margin: 0 0.4rem;
+}
+
+.footer__copyright {
+  color: #8c8c8c;
+}
+
+.footer .attribution {
+  margin: 2rem;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

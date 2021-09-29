@@ -21,9 +21,10 @@ $very-dark-gray: hsl(0, 0%, 41%);
 
 //Placeholders
 %card {
-    min-width: 21rem;
+    width: 100%;
+    min-width: 18rem;
     min-height: 8rem;
-    margin: 0.83rem 1.66rem;
+    margin: 0.83rem 0;
     position: relative;
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;

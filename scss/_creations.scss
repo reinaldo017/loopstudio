@@ -1,5 +1,6 @@
 .creations {
     @include vertical-align(center, center);
+    margin-bottom: 6.5rem;
 
     &__title {
         text-align: center;
@@ -7,6 +8,8 @@
 
     &__container {
         @include vertical-align(space-evenly, center);
+        width: 87%;
+        min-width: 18rem;
         margin: 1.66rem;
     }
 
