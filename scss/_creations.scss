@@ -17,6 +17,10 @@
         text-align: center;
         justify-self: start;
         margin: 0;
+
+        @media screen and (min-width: $tablet-size) {
+            font-size: 3rem;
+        }
     }
 
     &__container {

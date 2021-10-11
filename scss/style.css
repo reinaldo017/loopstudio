@@ -393,6 +393,12 @@ ul {
   margin: 0;
 }
 
+@media screen and (min-width: 800px) {
+  .creations__title {
+    font-size: 3rem;
+  }
+}
+
 .creations__container {
   display: -ms-grid;
   display: grid;
