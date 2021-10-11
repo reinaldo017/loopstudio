@@ -1,37 +1,87 @@
 .footer {
-    @include vertical-align(center, center);
+    display: flow-root;
     background-color: $black;
     color: $white;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
+
+    &__container {
+        @include vertical-align(center, center);
+        width: 87%;
+        margin: 2.8rem auto;
+
+        @media screen and (min-width: $tablet-size) {
+            display: grid;
+            gap: 2rem 3rem;
+            grid-template: 2.4rem 2.4rem / 1fr 1fr;
+            grid-template-areas: 
+                "logo sm"
+                "links copy";
+        }
+    }
 
     &__logo {
-        margin-top: 3.73rem;
+        grid-area: logo;
         margin-bottom: 1.5rem;
+
+        @media screen and (min-width: $tablet-size) {
+            margin: 0;
+        }
     }
 
     &__ul {
+        grid-area: links;
         margin-bottom: 1.8rem;
+
+        @media screen and (min-width: $tablet-size) {
+            margin: 0;
+            @include horizontal-align(space-between, center);
+        }
     }
 
     &__li {
-        margin: 1em auto;
+        margin: 1em 0;
         text-align: center;
+        position: relative;
+
+        &:hover {
+            @extend %underline;
+        }
     }
 
     &__sm-container {
+        grid-area: sm;
+        justify-self: end;
         margin: 1.6rem auto;
+
+        @media screen and (min-width: $tablet-size) {
+            margin: 0;
+        }
     }
 
     &__sm {
         margin: 0 0.4rem;
     }
 
+    &__sm path {
+        transition: fill 300ms ease-out;
+        cursor: pointer;
+        &:hover {
+            fill: $very-dark-gray;
+        }
+    }
+
     &__copyright {
+        grid-area: copy;
+        justify-self: end;
         color: $dark-gray;
     }
 
     .attribution {
         margin: 2rem;
         text-align: center;
+
+        .author {
+            color: #992f8b;
+        }
     }
 }

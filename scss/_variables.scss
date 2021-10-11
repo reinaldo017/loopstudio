@@ -13,6 +13,19 @@
     align-items: $align-items;
 }
 
+@mixin set-background($name, $window-size:'mobile') {
+        background: url('../images/#{$window-size}/image-#{$name}.jpg') no-repeat, linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%) no-repeat;
+        background-size: cover;
+        background-position: center top;
+        cursor: pointer;
+        &:hover, &:active {
+            background: url('../images/#{$window-size}/image-#{$name}.jpg') no-repeat, rgba(140 ,140 ,140 , 0.7);
+            background-blend-mode: hue;
+            background-size: cover;
+            color: $black;
+        }
+}
+
 //Colors 
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
@@ -20,16 +33,28 @@ $dark-gray: hsl(0, 0%, 55%);
 $very-dark-gray: hsl(0, 0%, 41%);
 
 //Placeholders
+%underline {
+    &::before {
+        content: '';
+        width: 90%;
+        border: 1px solid $white;
+        position: absolute;
+        top: 2rem;
+        left: 2px;
+        color: $white;
+    }
+}
+
 %card {
-    width: 100%;
-    min-width: 18rem;
-    min-height: 8rem;
-    margin: 0.83rem 0;
-    position: relative;
-    background-repeat: no-repeat;
+    position: relative; //Needed for positioning text
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     color: $white;
     background-blend-mode: overlay;
+    transition: all 300ms ease-out;
 }
+
+//Variables
+$desktop-size: 1200px;
+$tablet-size: 800px;

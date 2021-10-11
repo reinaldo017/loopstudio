@@ -1,30 +1,69 @@
 .header {
+    display: flow-root;
+    min-height: 43rem;
     background-image: url('../images/mobile/image-hero.jpg');
     background-size: cover;
-    min-height: 43rem;
-    display: flow-root;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media screen and (min-width: $tablet-size) {
+        background-color: rgba(0,0,0,0.4);
+        background-image: url('../images/desktop/image-hero.jpg');
+        background-blend-mode: overlay;
+    }
+
+    &__title-container {
+        width: 87%;
+        max-width: 78rem;
+        margin: 10.5rem auto;
+    }
 
     &__title {
+        max-width: 28rem;
+        padding: 0.63em;
+        border: 1px solid $white;
+        color: $white;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 2.6rem;
         font-weight: 300;
-        color: $white;
-        margin: 10.5rem 1.46rem;
-        border: 1px solid $white;
-        padding: 1.8rem;
-        max-width: 28.53rem;
+
+        @media screen and (min-width: $desktop-size) {
+            width: 60%;
+            max-width: none;
+            font-size: 4.66rem;
+        }
     }
 }
 
 .nav {
     @include horizontal-align(space-between, center);
-    margin: 2.73rem 1.53rem;
+    width: 87%;
+    max-width: 78rem;
+    margin: 2.73rem auto;
 
     &__logo {
-        max-width: 9.6rem;
+        max-width: 12.86rem;
+    }
+
+    &__ul {
+        display: none;
+        @media screen and (min-width: $tablet-size) {
+            @include horizontal-align(space-between, center);
+            width: 35%;
+            min-width: 24rem;
+        }
+    }
+
+    &__li {
+        position: relative;
+        &:hover{
+            @extend %underline;
+        }
     }
 
     &__hamburger {
         cursor: pointer;
+        @media screen and (min-width: $tablet-size) {
+            display: none;
+        }
     }
 }

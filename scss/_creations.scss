@@ -1,82 +1,161 @@
 .creations {
     @include vertical-align(center, center);
-    margin-bottom: 6.5rem;
+    width: 87%;
+    max-width: 84rem;
+    margin: 6rem auto;
 
+    @media screen and (min-width: $tablet-size) {
+        display: grid;
+        grid-template: 3rem 1fr / repeat(3, 1fr);
+        grid-template-areas: 
+            'title . button'
+            'container container container';
+    }
+       
     &__title {
+        grid-area: title;
         text-align: center;
+        justify-self: start;
+        margin: 0;
     }
 
     &__container {
-        @include vertical-align(space-evenly, center);
-        width: 87%;
-        min-width: 18rem;
-        margin: 1.66rem;
+        display: grid;
+        grid-area: container;
+        row-gap: 1.6rem;
+        grid-template: repeat(8, 120px) / 1fr;
+        grid-template-areas: 
+            'earth'
+            'arcade'
+            'soccer'
+            'the-grid'
+            'up-above'
+            'borealis'
+            'curiosity'
+            'fisheye';
+        width: 100%;
+        max-width: 28rem;
+        margin-top: 3.6rem;
+        margin-bottom: 2.26rem;
+
+        @media screen and (min-width: $tablet-size) {
+            gap: 2rem;
+            grid-template: repeat(2, 30rem) / repeat(4, 1fr);
+            grid-template-areas: 
+                'earth arcade soccer the-grid'
+                'up-above borealis curiosity fisheye';
+            max-width: none;
+        }
     }
 
     &__text {
         position: absolute;
-        left: 1rem;
+        left: 1em;
         bottom: 1.6rem;
-        margin: 0;
         width: 35%;
+        margin: 0;
+
+        @media screen and (min-width: $desktop-size) {
+            width: 50%;
+            font-size: 1.5rem;
+        }
     }
 
     .button {
+        grid-area: button;
+        border: 1px solid $black;
+        margin: 0 auto;
+        padding: 1rem 2.87em;
+        background-color: transparent;
         font-family: 'Alata', sans-serif;
-        padding: 1rem 2.53rem;
         letter-spacing: 5px;
         font-weight: 500;
-        border: 1px solid black;
-        margin: 0 auto;
         cursor: pointer;
+
+        &:hover, &:active {
+            color: $white;
+            background-color: $black;
+        }
+
+        @media screen and (min-width: $tablet-size) {
+            display: block; 
+            margin: 0;
+            justify-self: end;
+        }
     }
 }
 
 //Cards
 #earth {
-    background: url('../images/mobile/image-deep-earth.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: earth;
+    @include set-background('earth');
     @extend %card;
+
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('earth', 'desktop');
+    }
 }
 
 #arcade {
-    background: url('../images/mobile/image-night-arcade.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: arcade;
+    @include set-background('arcade');
     @extend %card;
+
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('arcade', 'desktop');
+    }
 }
 
 #soccer {
-    background: url('../images/mobile/image-soccer-team.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: soccer;
+    @include set-background('soccer');
     @extend %card;
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('soccer', 'desktop');
+    }
 }
 
 #grid {
-    background: url('../images/mobile/image-grid.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: the-grid;
+    @include set-background('grid');
     @extend %card;
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('grid', 'desktop');
+    }
 }
 
 #up-above {
-    background: url('../images/mobile/image-from-above.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: up-above;
+    @include set-background('above');
     @extend %card;
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('above', 'desktop');
+    }
 }
 
 #borealis {
-    background: url('../images/mobile/image-pocket-borealis.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: borealis;
+    @include set-background('borealis');
     @extend %card;
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('borealis', 'desktop');
+    }
 }
 
 #curiosity {
-    background: url('../images/mobile/image-curiosity.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: curiosity;
+    @include set-background('curiosity');
     @extend %card;
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('curiosity', 'desktop');
+    }
 }
 
 #fisheye {
-    background: url('../images/mobile/image-fisheye.jpg'), linear-gradient(to right, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.0) 100%);
-    background-size: cover;
+    grid-area: fisheye;
+    @include set-background('fisheye');
     @extend %card;
+    @media screen and (min-width: $tablet-size) {
+        @include set-background('fisheye', 'desktop');
+    }
 }
